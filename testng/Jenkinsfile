@@ -1,6 +1,9 @@
 node{
 stage('SCM Checkout'){
+
 git 'https://github.com/kakarlathanmayee/test'}
 stag('Compil-Package'){
-sh 'mvn package'}
+//Get maven homepath
+def mvnHome : tool name: 'MAVEN_HOME', type: 'maven'
+sh "${mvnHome}/bin/mvn package"}
 }
